@@ -4,7 +4,7 @@
 
 #include<stdio.h>
 int main(void){
-	int i,j;
+	int i,j,k;
 /*
 	*
 	* *
@@ -90,7 +90,9 @@ B C D
 C D
 D
 */
-	int k=65,l=3;
+
+/*
+int k=65,l=3;
 	for(i=0;i<4;i++){
 		for(j=i;j<4;j++){
 			printf(" %c ",k);
@@ -100,5 +102,57 @@ D
 		l--;
 		printf("\n");
 	}
+*/
+	
+
+/*
+			G
+		E F G F E
+	C D E F G F E D C
+A B C D E F G F E D C B A
+	C D E F G F E D C
+		E F G F E
+			G
+*/  
+	int val=70,num=4;
+	for(i=1;i<=num;i++){
+		for (j=2*i;j<=7;j++){
+			printf("   ");
+		}
+		for(k=1;k<2*i;k++){
+			printf(" %c ",val+k);
+		}
+		
+		printf("\b\b\b");
+
+		for(k=1;k<2*i;k++){
+			int val2=72;
+			printf(" %c ",val2-k);
+		}
+
+		printf("\n");
+		val-=2;
+	}
+	val=65;
+	for(i=1;i<num;i++){
+		for (j=1;j<=2*i;j++){
+			printf("   ");
+		}
+		for(k=2*i;k<=6;k++){
+			printf(" %c ",val+k);
+		}
+		
+		printf("\b\b\b");
+		int val2=72,m=1;
+		for(k=2*i;k<=6;k++){
+			
+			printf(" %c ",val2-m);
+			m++;
+		}
+		
+		printf("\n");
+		
+	}
+	
 	return 0;
 }
